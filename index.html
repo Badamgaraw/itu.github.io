@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Badamgarav's cv</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badamgarav's CV</title>
     <style>
-    body {
-      background-color: white;
-      color: black;
-      transition: background-color 0.5s;
-    }
+        body {
+            background-color: white;
+            color: black;
+            transition: background-color 0.5s;
+        }
 
-    .dark-theme {
-      background-color: black;
-      color: white;
-    }
+        .dark-theme {
+            background-color: black;
+            color: white;
+        }
 
-    .dark-theme:hover {
-      background-color: #333;
-    }
+        .dark-theme:hover {
+            background-color: #333;
+        }
+
+        /* Moved out of the body selector */
+        .column:first-child {
+            background-color: #f9f9f9;    
+        }
+
+        .column:last-child {
+            background-color: #eef;        
+        }
     </style>
 </head>
 <body>
@@ -32,38 +43,53 @@
         <thead>
             <tr>
                 <td colspan="3">
-                <a href = "https://facebook.com">
-                    <img src="/Users/badka/Library/Mobile Documents/com~apple~CloudDocs/Downloads/wetransfer_image00001-jpeg_2024-09-10_1400/image00090.jpeg" width="300" height="200">
+                <a href="https://facebook.com">
+                    <img src="/Users/badka/Library/Mobile Documents/com~apple~CloudDocs/Downloads/wetransfer_image00001-jpeg_2024-09-10_1400/image00090.jpeg" width="300" height="200" alt="Education Image">
                 </a>
                 </td>
             </tr>
             <tr>
-                <th>Year </th>
-                <th>Education </th>
+                <th>Year</th>
+                <th>Education</th>
                 <th>University</th>
             </tr>
             <tr>
-                <th>2010-2015 </th>
-                <th>Elementary school </th>
-                <th>2nd school</th>
+                <th>2010-2015</th>
+                <th>Elementary School</th>
+                <th>2nd School</th>
             </tr>
             <tr>
-                <th>2015-2019 </th>
-                <th>Middle school </th>
-                <th>2nd school</th>
+                <th>2015-2019</th>
+                <th>Middle School</th>
+                <th>2nd School</th>
             </tr>
             <tr>
-                <th>2019-2022 </th>
-                <th>High school </th>
-                <th>2nd school</th>
+                <th>2019-2022</th>
+                <th>High School</th>
+                <th>2nd School</th>
             </tr>
             <tr>
-                <th>2022-now </th>
-                <th>Bachelor </th>
+                <th>2022-now</th>
+                <th>Bachelor</th>
                 <th>The National University of Mongolia</th>
             </tr>
         </thead>
     </table>
+    <h1>My Family</h1>
+    <h2>Family Members</h2>
+    <div class="column">
+        <ul>
+            <li>Father</li>
+            <li>Mother</li>
+            <li>Brother</li>
+            <li>Sister</li>
+        </ul>
+    </div>
+    <div class="column">
+        <h2>Profession</h2>
+        <hr>
+        <img src="https://via.placeholder.com/150" alt="Sample Image">
+    </div>
     <script>
         document.getElementById("themeButton").onclick = function() {
             document.body.classList.toggle("dark-theme");
@@ -75,8 +101,5 @@
             }
         };
     </script>
-    <a href="index/family.html">About</a>
-
 </body>
 </html>
-
