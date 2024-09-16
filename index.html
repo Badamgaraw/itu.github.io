@@ -20,21 +20,22 @@
     </style>
 </head>
 <body>
-    <h1>Dark Theme Button</h1>
     <button id="themeButton">Switch to Dark Theme</button>
     <h1>Badamgarav Sengesamba</h1>
     <p></p>
     <h2>Age: 20</h2>
     <h2>Gender: Female</h2>
     <h2>Major: Software Engineering</h2>
-    <p></p>
+    <hr>
     <table border="1">  
         <caption>Education background</caption>
         <thead>
             <tr>
+                <td colspan="3">
                 <a href = "https://facebook.com">
-                    <ing src="/Users/badka/Desktop/The league sonin/2024.01.09/5ца 2008 21.pdf" width="300" height="200">
+                    <img src="/Users/badka/Library/Mobile Documents/com~apple~CloudDocs/Downloads/wetransfer_image00001-jpeg_2024-09-10_1400/image00090.jpeg" width="300" height="200">
                 </a>
+                </td>
             </tr>
             <tr>
                 <th>Year </th>
@@ -63,6 +64,17 @@
             </tr>
         </thead>
     </table>
+    <script>
+        document.getElementById("themeButton").onclick = function() {
+            document.body.classList.toggle("dark-theme");
+            const btn = document.getElementById("themeButton");
+            if (document.body.classList.contains("dark-theme")) {
+                btn.innerText = "Switch to Light Theme";
+            } else {
+                btn.innerText = "Switch to Dark Theme";
+            }
+        };
+        </script>
 </body>
 </html>
 
