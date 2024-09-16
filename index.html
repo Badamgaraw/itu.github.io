@@ -33,10 +33,10 @@
 <body>
     <button id="themeButton">Switch to Dark Theme</button>
     <nav>
-        <a href="/Badamgarav Sengesamba/">HTML</a> |
-        <a href="/My Family/">My Family</a> |
-        <a href="/My Friends/">My Friends</a> |
-        <a href="/Contact/">My Family</a>
+        <a href="#education">Education</a> |
+        <a href="#family">My Family</a> |
+        <a href="#friends">My Friends</a> |
+        <a href="#contact">Contact</a>
         </nav>
     <h1><i>Badamgarav Sengesamba</i></h1>
     <p></p>
@@ -44,6 +44,7 @@
     <h2>Gender: Female</h2>
     <h2>Major: Software Engineering</h2>
     <hr>
+    <section id="education">
     <table border="1">  
         <caption>Education background</caption>
         <thead>
@@ -81,6 +82,8 @@
             </tr>
         </thead>
     </table>
+    </section>  
+    <section id="family">
     <h1><i>My Family</i></h1>
     <h2>Family Members</h2>
     <section class="column">
@@ -106,6 +109,8 @@
         <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.edutopia.org%2Farticle%2Fhow-set-student-directed-learning-program-high-school%2F&psig=AOvVaw3igE7r8Qds9Jj6EUbnLFER&ust=1726581428257000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCLCQz5jPx4gDFQAAAAAdAAAAABAE" alt="Student">
         &emsp Sister: Student
     </section>
+    </section>
+    <section id="friends">
     <h1><i>My Friends</i></h1>
     <h2>Friend groups</h2>
     <p style="background-color:rgb(233, 123, 215);">Anna</p>
@@ -136,8 +141,12 @@
         <li>Easy approaching</li>
         <li>Just a kid</li>
     </ul>
+    </section>
+    <section id="contact">
     <h1><i>Contact</i></h1>
     <h2>Social accounts</h2>
+    <a href ="https://www.facebook.com"><img src="https://www.facebook.com/"></a>
+    </section>
     <script>
         document.getElementById("themeButton").onclick = function() {
             document.body.classList.toggle("dark-theme");
