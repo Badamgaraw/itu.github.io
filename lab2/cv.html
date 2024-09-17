@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badamgarav's CV</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            transition: background-color 0.5s;
+        }
+
+        .dark-theme {
+            background-color: black;
+            color: white;
+        }
+
+        .dark-theme:hover {
+            background-color: #333;
+        }
+
+        /* Moved out of the body selector */
+        .column:first-child {
+            background-color: #f9f9f9;    
+        }
+
+        .column:last-child {
+            background-color: #eef;        
+        }
+    </style>
+</head>
+<body>
+    <button id="themeButton">Switch to Dark Theme</button>
+    <nav>
+        <a href="./education.html">Education</a> |
+        <a href="./family.html">My Family</a> |
+        <a href="./friends.html">My Friends</a> |
+        <a href="./contact.html">Contact</a>
+        </nav>
+    <h1><i>Badamgarav Sengesamba</i></h1>
+    <p></p>
+    <h2>Age: 20</h2>
+    <h2>Gender: Female</h2>
+    <h2>Major: Software Engineering</h2>
+    <hr>
+    <script>
+        document.getElementById("themeButton").onclick = function() {
+            document.body.classList.toggle("dark-theme");
+            const btn = document.getElementById("themeButton");
+            if (document.body.classList.contains("dark-theme")) {
+                btn.innerText = "Switch to Light Theme";
+            } else {
+                btn.innerText = "Switch to Dark Theme";
+            }
+        };
+    </script>
+</body>
+</html>
