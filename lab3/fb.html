@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badamgarav's CV</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            transition: background-color 0.5s;
+        }
+
+        .dark-theme {
+            background-color: black;
+            color: white;
+        }
+
+        .dark-theme:hover {
+            background-color: #333;
+        }
+
+        /* Moved out of the body selector */
+        .column:first-child {
+            background-color: #f9f9f9;    
+        }
+
+        .column:last-child {
+            background-color: #eef;        
+        }
+        table{
+            width: 100vw;
+            height: 100vh;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <button id="themeButton">Switch to Dark Theme</button>
+    <table border="1">  
+    <tr>
+        <td colspan="3">
+        <td colspan="3" style="background-color:rgb(63, 123, 234);">
+        <i>THE Facebook</i>
+        <nav>
+            <a href="">home</a> 
+            <a href="">search</a> 
+            <a href="">global</a> 
+            <a href="">social net</a>
+            <a href="">invite</a> 
+            <a href="">faq</a> 
+            <a href="">logout</a>
+        </nav>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <from>
+                <label for="search"></label>
+                <input type="search" name="search" id="search">quick search
+            </from>
+            </td>
+        <td colspan="5" style="background-color:rgb(63, 123, 234);">
+            Badamgarav Sengesamba's profile (this is you)
+        </td>
+    </tr>  
+    <tr>
+        
+        <td><search></search></td>
+        <td colspan="2">picture</td>
+        <td colspan="3">information</td>
+    </tr>
+
+    <hr>
+    <script>
+        document.getElementById("themeButton").onclick = function() {
+            document.body.classList.toggle("dark-theme");
+            const btn = document.getElementById("themeButton");
+            if (document.body.classList.contains("dark-theme")) {
+                btn.innerText = "Switch to Light Theme";
+            } else {
+                btn.innerText = "Switch to Dark Theme";
+            }
+        };
+    </script>
+</body>
+</html>
