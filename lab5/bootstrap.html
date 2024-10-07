@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        .hello {
+            background-color: #13124F;
+            color: aliceblue;
+            padding-left: 20px;
+            padding-top: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 50px;
+        }
+
+        button {
+            background-color: #F61067;
+            color: aliceblue;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .mark {
+            background-color: #9090A5;
+            color: aliceblue;
+            padding: 10px;
+        }
+
+        .circle {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 50%;
+            background-color: #352BA5;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .message {
+            background-color: #F61067;
+            color: aliceblue;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .greeting {
+            background-color: #13124F;
+            color: aliceblue;
+            padding: 10px;
+        }
+        .vote {
+            border-color: #9090A5;
+            border-style: solid;
+            border-width: 1px;
+            padding: 10px;
+        }
+        a {
+            color: aliceblue;
+            background-color: #352BA5;
+            width: 100%;
+            text-align: center;
+            font-size: 10px;
+            display: block;
+            padding: 10px;
+        }
+
+        article {
+            width: 65%;
+            margin-right: 20px;
+        }
+        main {
+            display: flex; 
+            justify-content: space-between;
+        }
+        aside {
+            width: 35%;
+        }
+        @media (max-width: 768px) {
+            article, aside {
+                width: 100%; 
+                margin-right: 0;
+            }
+
+            h1 {
+                font-size: 30px; 
+            }
+        }
+
+        @media (max-width: 480px) {
+            button {
+                width: 100%; 
+                font-size: 18px; 
+            }
+
+            .circle {
+                width: 20px; /* Smaller circle size */
+                height: 20px; /* Smaller circle size */
+                line-height: 20px; /* Center text */
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header style="background-color: #1b1b6c; color:aliceblue;">
+        Web<b>junto</b>
+    
+        <nav class="hello">
+            <h1 style="font-size: 50px;">Hello, world!</h1>
+            Welcome to Bootstrap v3.3.7. Check out this awesome jumbotron!
+            <form action="click">
+                <button>Learn more</button><br><br>
+            </form>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <h2 style="border-bottom: rgb(189, 186, 186) 1px solid; margin: 20px; padding: 10px;">Heading goes here</h2>
+            <p> beans apple pie cupcake tart croissant soufflé cake liquorice sesame snaps. Muffin danish liquorice.
+                Cotton candy sweet roll marzipan ice cream powder bonbon
+                lollipop chocolate bar chupa chups.
+            </p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/kPa7bsKwL-c?si=IhPxAtVAE9zULDjc"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+            <p class="mark">
+                <i class="fas fa-exclamation-circle"></i>
+                Whoa this is a super important alert!
+            </p>
+        </article>
+        <aside>
+            <p class="message">
+                <i class="fas fa-envelope"></i>
+                MESSAGES
+                <span class="circle">3</span>
+            </p>
+            <section class="mark">
+                Welcome Candidate!
+            </section>
+            <section class="greeting">
+                You are a Starfleet Academy candidate. Greet the Captain in a <i>respectful</i> fashion.
+                <form action="/submit_form" method="POST" style="width: 100%;">
+                    <label for="text">Greeting:</label><br>
+                    <input type="text" id="text" placeholder="Input your greeting.." style="width: 100%; font-size: 20px;">
+                </form>
+                <form action="click" style="width: 100%;">
+                    <button style="width: 100%; font-size: 20px;">Send</button>
+                </form>
+                <a href="#">I don't watch Star Trek and don't get this reference</a>
+            </section><p></p>
+            <section class="vote">
+                Cast your vote! What do you think about space? See vote progress bar below!
+                <form action="click" method="POST">
+                    <label>
+                        <input type="vote" name="vote" value="cool"> 
+                    </label><br>
+                    <label>
+                        <input type="vote" name="vote" value="lame"> 
+                    </label><br>
+                </form>
+            </section>
+        </aside>
+    </main>
+</body>
+
+</html>
