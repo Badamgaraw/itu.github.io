@@ -20,5 +20,5 @@ function getBaishinResult() {
 
     const result = apartment(davhar, orts, ail);
 
-    return result; // Return the result string for display
+    return result; 
 }

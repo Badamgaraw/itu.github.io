@@ -1,8 +1,8 @@
 function getArrayResult() {
     let x = [];
+    
     for (var i = 0; i < 5; i++) {
         var num = parseInt(window.prompt(`${i + 1}-р тоог оруул :`)); 
-        num = parseInt(num);
         x.push(num); 
     }
 
@@ -10,11 +10,17 @@ function getArrayResult() {
         return b === 0 ? a : gcd(b, a % b);
     }
 
-    function findGCD(numbers) {
-        return numbers.reduce((acc, num) => gcd(acc, num));
+    function find(numbers) {
+        var current = numbers[0]; 
+
+        for (var i = 1; i < numbers.length; i++) {
+            current = gcd(current, numbers[i]);
+        }
+        
+        return current;
     }
 
-    const resultGCD = findGCD(x);
+    const result = find(x);
     
-    return `4. Хамгийн бага ерөнхий хуваагдагч: ${resultGCD}<br>`;
+    return `4. Хамгийн бага ерөнхий хуваагдагч: ${result}<br>`;
 }
