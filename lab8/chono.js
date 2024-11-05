@@ -1,29 +1,28 @@
-var s = window.prompt("Зай оруул:"); 
-s = parseFloat(s); 
-function timeToCatch(rabbitSpeed, wolfSpeed, distance) {
-    const v = wolfSpeed - rabbitSpeed;
+function getChonoResult() {
+    var s = window.prompt("Зай оруул:"); 
+    s = parseFloat(s); 
+    
+    const rabbitSpeed = 18; // km/h
+    const wolfSpeed = 25; // km/h
+    const distance = s;
+
     if (distance < 0) {
-        return { error: "Зай нь сөрөг утга байна." }; 
+        return "Зай нь сөрөг утга байна.";
     }
+    
     if (distance === 0) {
-        return { message: "Чоно аль хэдийн туулайг гүйцсэн байна." };
+        return "Чоно аль хэдийн туулайг гүйцсэн байна.";
     }
-    const t = distance / v; 
+
+    const v = wolfSpeed - rabbitSpeed;
+    if (v <= 0) {
+        return "Чоно туулайг гүйцэхгүй.";
+    }
+
+    const t = distance / v;
     const totalMinutes = t * 60; 
     const minutes = Math.floor(totalMinutes);
     const seconds = Math.round((totalMinutes - minutes) * 60);
     
-    return { minutes, seconds };
-}
-
-const rabbitSpeed = 18; // km/h
-const wolfSpeed = 25; // km/h
-const time = timeToCatch(rabbitSpeed, wolfSpeed, s);
-
-if (time.error) {
-    document.write(`2. ${time.error}<br>`); // Output the error message
-    console.log(time.error);
-} else {
-    document.write(`2. ${time.minutes} минут ${time.seconds} секундын дараа гүйцнэ<br>`); // Output the result
-    console.log(`Minutes: ${time.minutes}, Seconds: ${time.seconds}`);
+    return `${minutes} минут ${seconds} секундын дараа гүйцэнэ`;
 }

@@ -7,6 +7,14 @@
 </head>
 <body>
     <h1>Solution Outputs</h1>
+    
+    <!-- Buttons to select different solutions -->
+    <button onclick="showSolution(1)">Solution 1</button>
+    <button onclick="showSolution(2)">Solution 2</button>
+    <button onclick="showSolution(3)">Solution 3</button>
+    <button onclick="showSolution(4)">Solution 4</button>
+    <button onclick="showSolution(5)">Solution 5</button>
+
     <div id="output"></div>
     
     <script src="palindrome.js"></script>  
@@ -14,5 +22,37 @@
     <script src="baishin.js"></script>
     <script src="array.js"></script>
     <script src="ugluuoroi.js"></script>
+
+    <script>
+        function showSolution(solutionNumber) {
+            const outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = ""; // Clear previous output
+
+            switch (solutionNumber) {
+                case 1:
+                    // Assuming palindrome.js has a function named `getPalindromeResult()`
+                    outputDiv.innerHTML = getPalindromeResult();
+                    break;
+                case 2:
+                    // Assuming chono.js has a function named `getChonoResult()`
+                    outputDiv.innerHTML = getChonoResult();
+                    break;
+                case 3:
+                    // Assuming baishin.js has a function named `getBaishinResult()`
+                    outputDiv.innerHTML = getBaishinResult();
+                    break;
+                case 4:
+                    // Assuming array.js has a function named `getArrayResult()`
+                    outputDiv.innerHTML = getArrayResult();
+                    break;
+                case 5:
+                    // Assuming ugluuoroi.js has a function named `getUgluuoroiResult()`
+                    outputDiv.innerHTML = getUgluuoroiResult();
+                    break;
+                default:
+                    outputDiv.innerHTML = "Invalid solution number.";
+            }
+        }
+    </script>
 </body>
 </html>
