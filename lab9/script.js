@@ -1,4 +1,16 @@
-const words = ["JAVASCRIPT", "PYTHON", "HANGMAN", "CODING", "GAME"]; // Word list
+ // Word list
+ const words = [
+    "UNOBTRUSIVE", "CONSTITUTIONAL", "PHILOSOPHY", "EXTRAORDINARY", "LABORATORY",
+    "THERMOMETER", "METAMORPHOSIS", "VINDICATION", "TRANQUILITY", "DYSTOPIA",
+    "PSEUDONYM", "HEURISTICS", "INCANDESCENT", "IMPECCABLE", "GARGANTUAN",
+    "MELLIFLUOUS", "AUTOMATON", "CATHARSIS", "EPHEMERAL", "AMBIDEXTROUS",
+    "PERSPECTIVE", "ALTRUISM", "ECLECTIC", "IDIOSYNCRATIC", "COMBUSTIBLE",
+    "SYNCHRONIZE", "PARADIGM", "METAPHORICAL", "ASTROPHYSICS", "NUMEROUS",
+    "INCREDULOUS", "CALCULATOR", "HARMONIOUS", "ABSTRACT", "FLUCTUATION",
+    "EXUBERANT", "CONVOLUTED", "CONFIDENTIAL", "INCONSPICUOUS", "PRECARIOUS",
+    "ARTICULATE", "SUBLIMINAL", "INTERPRETATION", "INSURMOUNTABLE", "PERSISTENT",
+    "PLETHORA", "CONVULSIONS", "DISPOSITION", "TRANSIENT", "DISCOMBOBULATED"
+];
 const maxLives = 6;
 let selectedWord = "";
 let displayedWord = [];
@@ -159,14 +171,13 @@ function drawHangman(stage) {
     }
 }
 
-// Add event listeners to letter buttons
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         checkLetter(button.textContent);
     });
 });
-// Restart button functionality
+// Restart button 
 restartButton.addEventListener("click", initializeGame);
 
-// Start the game on page load
+// Start the game 
 initializeGame();
