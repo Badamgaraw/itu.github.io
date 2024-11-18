@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: rgba(214, 214, 247, 0.943);
+    color: #333;
+    margin: 0;
+    padding: 10px;
+}
+canvas {
+    margin: 20px auto;
+    border: 1px solid #e7a5a5;
+    background: #f9f9f9;
+}
+.game-container{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.game-container h4{
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    align-items: end;
+}
+#word {
+    font-size: 1.5em;
+    margin: 20px 0;
+    letter-spacing: 0.2em;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+#message {
+    color: red;
+    font-weight: bold;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+.grey {
+    background-color: grey;
+}
+#restart-btn {
+    background-color: #28a745;
+    justify-self: center;
+}
+
+#restart-btn:hover {
+    background-color: #218838;
+}
+@media screen and (max-width: 476px){
+    .game-container {
+        flex-direction: column; /* Still stacked vertically */
+        gap: 15px;
+    }
+    #word-container {
+        order: 1; 
+        font-size: 20px; 
+    }
+    #hangman-canvas {
+        order: 2; 
+    }
+    #keyboard {
+        order: 3; 
+    }
+    body{
+        padding: 0px;
+    }
+}
