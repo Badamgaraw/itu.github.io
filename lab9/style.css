@@ -3,7 +3,6 @@ body {
     text-align: center;
     background-color: rgba(214, 214, 247, 0.943);
     color: #333;
-    margin: 0;
     padding: 10px;
 }
 canvas {
@@ -12,6 +11,7 @@ canvas {
     background: #f9f9f9;
 }
 .game-container{
+    display: grid;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -19,7 +19,6 @@ canvas {
 }
 .game-container h4{
     display: flex;
-    position: relative;
     justify-content: flex-end;
     align-items: end;
 }
@@ -27,10 +26,6 @@ canvas {
     font-size: 1.5em;
     margin: 20px 0;
     letter-spacing: 0.2em;
-}
-
-.controls {
-    margin-top: 20px;
 }
 
 #message {
@@ -64,12 +59,10 @@ button:hover {
 }
 @media screen and (max-width: 476px){
     .game-container {
-        flex-direction: column; /* Still stacked vertically */
-        gap: 15px;
+        flex-direction: column; 
     }
     #word-container {
         order: 1; 
-        font-size: 20px; 
     }
     #hangman-canvas {
         order: 2; 
@@ -79,5 +72,13 @@ button:hover {
     }
     body{
         padding: 0px;
+    }
+    button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 3px;
+        cursor: pointer;
     }
 }
