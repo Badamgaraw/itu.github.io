@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мэдээний сайт</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Site Logo" width="50%"/>
+            </div>
+
+            <form class="search-form">
+                <input type="text" placeholder="Search..." id="search-input" />
+                <button type="submit">Search</button>
+            </form>
+        </nav>
+    </header>
+    <h1>News</h1>
+    <div id="news-list"></div>
+
+    <footer>
+        <p>&copy; 2024 Your Site Name. All rights reserved.</p>
+        <p><a href="contact.html">Contact Us</a> | <a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+    <script>
+        // RSS өгөгдөл авах        
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "rss.xml");
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xhr.responseText, "text/xml");
+                const items = xmlDoc.querySelectorAll("item");
+                const newsList = document.getElementById("news-list");
+
+                items.forEach((item, index) => {
+                    const title = item.querySelector("title").textContent;
+                    const link = item.querySelector("link").textContent;
+                    const pubDate = item.querySelector("pubDate").textContent;
+                    const description = item.querySelector("description")?.textContent || "No description available.";
+
+                    // Parse the description HTML content to extract images and text
+                    const descriptionDoc = parser.parseFromString(description, "text/html");
+                    const imgTags = descriptionDoc.querySelectorAll("img");
+                    const images = Array.from(imgTags).map(img => img.src);
+                    const imageUrl = images.length > 0 ? images[0] : "https://via.placeholder.com/150"; // Use first image or default
+
+                    // Debugging logs to check if we found an image URL
+                    console.log("Image URL for item:", title, imageUrl);
+
+                    // Store the description in local storage with a unique key
+                    const descriptionKey = `description-${index}`;
+                    localStorage.setItem(descriptionKey, description);
+
+                    // Create article element
+                    const article = document.createElement("article");
+
+                    // Add image element
+                    const img = document.createElement("img");
+                    img.src = imageUrl;
+                    img.alt = title;
+
+                    // Create content container for title and publication date
+                    const contentContainer = document.createElement("div");
+                    contentContainer.className = "content-container";
+
+                    // Add title with link to details page
+                    const a = document.createElement("a");
+                    a.href = `details.html?title=${encodeURIComponent(title)}&pubDate=${encodeURIComponent(pubDate)}&descriptionKey=${descriptionKey}&link=${encodeURIComponent(link)}`;
+                    a.textContent = title;
+                    a.target = "_blank";
+
+                    // Add publication date
+                    const date = document.createElement("p");
+                    date.textContent = `Published on: ${pubDate}`;
+
+                    // Append title and date to content container
+                    contentContainer.appendChild(a);
+                    contentContainer.appendChild(date);
+
+                    // Append elements to article
+                    article.appendChild(img);  // Add the image
+                    article.appendChild(contentContainer); // Add the content container
+
+                    // Append article to container
+                    newsList.appendChild(article);
+                });
+            } else {
+                console.error("RSS татахад алдаа гарлаа.");
+            }
+        };
+        xhr.onerror = function () {
+            console.error("Хүсэлт илгээхэд алдаа гарлаа.");
+        };
+        xhr.send();
+    </script>
+</body>
+</html>

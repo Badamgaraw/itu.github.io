@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мэдээний дэлгэрэнгүй</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Мэдээний дэлгэрэнгүй</h1>
+    
+    <div id="article-details">
+        <h2 id="article-title"></h2>
+        <img id="article-image" src="" alt="">
+        <p id="article-date"></p>
+        <div id="article-description"></div>
+        <a id="back-button" href="medee.html" target="_blank">Буцах</a>
+    </div>
+
+    <script>
+        // Get the query parameters from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const title = decodeURIComponent(urlParams.get('title') || 'Untitled');
+        const pubDate = decodeURIComponent(urlParams.get('pubDate') || 'Unknown date');
+        const descriptionKey = urlParams.get('descriptionKey');
+        const link = decodeURIComponent(urlParams.get('link') || '#');
+
+        // Retrieve the description from local storage
+        const description = localStorage.getItem(descriptionKey) || 'No description available.';
+
+        // Parse the description to extract images and text
+        const parser = new DOMParser();
+        const descriptionDoc = parser.parseFromString(description, "text/html");
+        const imgTags = descriptionDoc.querySelectorAll("img");
+        const images = Array.from(imgTags).map(img => img.src);
+        const imageUrl = images.length > 0 ? images[0] : "https://via.placeholder.com/150"; // Use first image or default
+
+        // Debug logs to check the content
+        console.log("Title: ", title);
+        console.log("Image: ", imageUrl);
+        console.log("Pub Date: ", pubDate);
+        console.log("Description: ", description);
+        console.log("Link: ", link);
+
+        // Populate the article details
+        document.getElementById("article-title").textContent = title;
+        document.getElementById("article-image").src = imageUrl;
+        document.getElementById("article-image").alt = title;
+        document.getElementById("article-date").textContent = `Published on: ${pubDate}`;
+        
+        // Ensure the description content is properly rendered as HTML
+        document.getElementById("article-description").innerHTML = description;
+
+        document.getElementById("article-link").href = link;
+    </script>
+</body>
+</html>
